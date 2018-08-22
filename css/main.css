@@ -1,0 +1,69 @@
+body{
+    margin:0;
+    padding:0;
+}
+.main{
+    width: 100vw;
+    height: 100vh;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    background-color: #40454D;
+}
+
+/* ---------------- ESTILOS ------------------ */
+.logo{
+    width:50%;
+    height: 100%;
+    position: relative;
+}
+
+.center{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.m-auto{
+    width: 90%;
+    max-height: 90%;
+    display: block;
+    margin: auto;
+}
+
+.mp-0{
+    margin:0;
+    padding:0;
+}
+ .ver-alg{
+     vertical-align: middle;
+ }
+
+.breath{
+    animation: bt 1s ease-out .75s alternate infinite;
+}
+
+@keyframes bt {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.01);
+    }
+}
+
+/* ---------------- RETICULA ------------------ */
+
+.ret{
+    border: 1px solid darkmagenta;
+}
+
+.ret > div{
+    border: 1px solid #adff2f;
+}
+
+.ret *{
+    border: 1px solid blue;
+}
