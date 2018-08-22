@@ -42,7 +42,7 @@ body{
  }
 
 .breath{
-    animation: bt 1s ease-out .75s alternate infinite;
+    animation: bt .85s ease-in 1.25s alternate infinite;
 }
 
 @keyframes bt {

@@ -10,8 +10,8 @@
 </head>
 <body>
         <!-- width="528px" height="528px"  -->
-    <div class="main ret">
-        <div class="logo m-auto">
+    <div class="main">
+        <div class="logo m-auto breath">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
                 xmlns:xlink="http://www.w3.org/1999/xlink" 
                 x="0px" y="0px" 
@@ -24,7 +24,7 @@
                     <style>
                             .nom{
                                 opacity: 0;
-                                animation: op 0.8s ease-in 0.5s normal forwards;
+                                animation: op 0.25s ease-in 0.15s normal forwards;
                             }
     
                             @keyframes op {
@@ -37,7 +37,23 @@
                             }
                             .planet{
                                 opacity: 0;
-                                animation: op 0.25s ease-out 1.25s normal forwards;
+                                animation: rot1 0.65s ease-out 0.75s normal forwards;
+                                transform-origin: center;
+                                transform: rotate(-74deg);
+                            }
+
+                            @keyframes rot1 {
+                                100%{
+                                    opacity: 1;
+                                    transform: rotate(0);
+                                }
+                            }
+
+                            .planet2{
+                                opacity: 0;
+                                animation: rot1 0.65s ease-out 0.75s normal forwards;
+                                transform-origin: center;
+                                transform: rotate(-44deg);
                             }
 
 
@@ -59,7 +75,7 @@
                         .type{
                             stroke-dasharray: 0 70 0 0 0 200;
                             stroke-dashoffset: 0;
-                            animation: gh 0.6s ease-in 0.7s normal forwards;
+                            animation: gh 0.6s ease-in 0.8s normal forwards;
                         }
                         @keyframes gh{
                             0%{
@@ -73,7 +89,7 @@
                         .type2{
                             stroke-dasharray: 0 60 0 0 0 200;
                             stroke-dashoffset: 0;
-                            animation: gh2 0.4s ease-in 0.9s normal forwards;
+                            animation: gh2 0.4s ease-in 1s normal forwards;
                         }
                         @keyframes gh2{
                             0%{
@@ -110,6 +126,7 @@
                 </defs>
                 
                 <g id="types">
+                    <g class="nom ret">
                     <polygon fill="#efefef" points="34.508,298.278 44.508,298.271 44.508,248.271 64.508,268.271 72.508,260.271 44.508,232.271 
                         34.508,238.271 	"/>
                     <polygon fill="#efefef" points="104.508,243.271 104.508,298.271 114.508,298.271 114.508,233.271 	"/>
@@ -125,7 +142,8 @@
                     <polygon fill="#efefef" points="414.508,298.271 424.486,298.271 424.508,248.271 444.508,268.265 452.508,260.265 
                         424.508,232.265 414.508,238.265 	"/>
                     <polygon fill="#efefef" points="484.508,243.265 484.508,298.265 494.508,298.265 494.508,233.265 	"/>
-                    <text class="nom" transform="matrix(1.1 0 0 1 45.2231 326.7285)" fill="#efefef" font-family="'Roboto'" font-size="21">MEMORIA DIGITAL DEL ESPACIO EN MÉXICO</text>
+                    </g>
+                    <text class="nom ret2" transform="matrix(1.1 0 0 1 45.2231 326.7285)" fill="#efefef" font-family="'Roboto'" font-size="21">MEMORIA DIGITAL DEL ESPACIO EN MÉXICO</text>
                     
                     <g id="lines">	
                             <line fill="none" class="type" stroke="#efefef" stroke-width="5.5" stroke-miterlimit="10" x1="52.122" y1="292.667" x2="246.861" y2="97.874"/>
@@ -145,7 +163,7 @@
                 </g>
             
                 <g id="planeta02">
-                    <circle class="planet" fill="none" stroke="#efefef" stroke-width="2" stroke-miterlimit="10" cx="397.175" cy="129.515" r="11"/>
+                    <circle class="planet2" fill="none" stroke="#efefef" stroke-width="2" stroke-miterlimit="10" cx="397.175" cy="129.515" r="11"/>
                 </g>
             
                 <g id="Planeta03">
