@@ -132,7 +132,7 @@
                         424.508,232.265 414.508,238.265 	"/>
                     <polygon fill="#efefef" points="484.508,243.265 484.508,298.265 494.508,298.265 494.508,233.265 	"/>
                     </g>
-                    <text class="nom ret2" transform="matrix(1.1 0 0 1 45.2231 326.7285)" fill="#efefef" font-family="'Roboto'" font-size="21">MEMORIA DIGITAL DEL ESPACIO EN MÉXICO</text>
+                    <text class="nom ret2" transform="matrix(1.1 0 0 1 45.2231 326.7285)" fill="#efefef" font-family="'Titillium Web'" font-size="21">MEMORIA DIGITAL DEL ESPACIO EN MÉXICO</text>
                     
                     <g id="lines">	
                             <line fill="none" class="type" stroke="#efefef" stroke-width="5.5" stroke-miterlimit="10" x1="52.122" y1="292.667" x2="246.861" y2="97.874"/>
