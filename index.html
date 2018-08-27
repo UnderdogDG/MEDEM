@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MEDEM</title>
+    <title>MEDEM - Memoria Digital del Espacio en México</title>
+    <link rel="icon" type="image/png" href="./img/medem-icon.ico">
     <link rel="stylesheet" href="./css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400,400i,600,600i,700" rel="stylesheet"> 
@@ -12,34 +13,42 @@
 
 <body>
 
-    <div class="main">
+    <div class="main" id="sec">
 
+        <!-- #region [1] LOGO -->
         <div class="logo m-auto breath">
             <object class="center" data="./img/logo-anim.svg" type="image/svg+xml" onerror="this.src='otro'"></object>
         </div>
+        <!-- #endregion -->
 
-        <nav class="nav mp-0 cw">
-            <!-- <div>
-            <ul>
-                <li class="item"><a href="#"><div class="btn">Acerca de</div></a></li>
-                <li class="item"><a href="#"><div class="btn">Controles</div></a></li>
-                <li class="item"><a href="#"></a></li>
-            </ul>
-            </div> -->
-            <div class="scroll center cw">
-                <object data="./img/scroll.svg" type="image/svg+xml"></object>
-            </div>
-        </nav>
-    </div>
+        <!-- #region [2] CONTROLS -->
+        <div class="scroll bottom bc">
+
+        </div>
+        <!-- #endregion -->
+
+        <!-- #region [3]  ACERCA -->
+        <div class="scroll wt-l bottom bc2">
+
+        </div>
+        <!-- #endregion -->
+
+        <!-- #region [4]  OTRO -->
+        <div class="scroll wt-r bottom bc3">
+
+        </div>
+        <!-- #endregion -->
+
+        <div id="listener">
     
-    <div class="main">
-
+        </div>
     </div>
 
     <!-- <script>
         var path = document.querySelector('#orbit');
         var length = console.log(path.getTotalLength());
     </script> -->
+    <script src="./js/main.js"></script>
   
 </body>
 </html>
