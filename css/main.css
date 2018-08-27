@@ -3,6 +3,7 @@
     --wht: #eee;
     --gry: #ccc;
     --blk: #2f2f2f;
+    --carbon: #333;
     --lily: #FF5A3C;
     --blue: #00609F;
     --ref: rgba(255, 0, 0, 0.2);
@@ -21,7 +22,8 @@ body{
     max-height: 100%;
     max-width: 100%;
     overflow: hidden;
-    background: var(--blk);
+    background: rgb(204,204,204);
+    background: radial-gradient(circle, rgba(204,204,204,1) 0%, rgba(172,171,171,1) 51%, rgba(158,158,161,1) 100%); 
     
 }
 
