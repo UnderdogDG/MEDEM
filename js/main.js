@@ -21,8 +21,12 @@ listener.addEventListener("wheel", (x)=>{
             scrollers[0].classList.add('top');
             for(let i = 0; i<maxElemt; i++){        
                 scrollers[i].classList.remove('slide');
-                scrollers[0].classList.add('bottom');
             };
+            setTimeout(()=>{
+                scrollers[0].classList.remove('top');
+                scrollers[0].classList.add('bottom');
+            },600)
+            
         }else{
             scrollers[elemt].classList.add('slide');
             elemt += 1;
