@@ -6,11 +6,10 @@
     --carbon: #333;
     --lily: #FF5A3C;
     --blue: #00609F;
-    --ref: rgba(255, 0, 0, 0.2);
-    --ref2: rgba(255, 255, 0, 0.2);
 }
 /* #endregion */
 
+/* #region [2] GENERAL */
 body{
     margin:0;
     padding:0;
@@ -22,10 +21,8 @@ body{
     height: 100vh;
     max-height: 100%;
     max-width: 100%;
-    overflow: hidden;
     background: rgb(204,204,204);
     background: radial-gradient(circle, rgba(204,204,204,1) 0%, rgba(172,171,171,1) 51%, rgba(158,158,161,1) 100%);
-    
 }
 
 #listener{
@@ -42,7 +39,41 @@ body{
     position: absolute;
     transition: height 0.5s ease-in-out, width 0.5s ease-out;
     overflow: hidden;
+    text-align: center;
 }
+
+.scroll h2{
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.logo{
+    width:100%;
+    height: 100%;
+}
+
+.sec-50{
+    box-sizing: border-box;
+    width: 30%;
+    min-width: 300px;
+}
+
+.sec-50 img{
+    min-width: 400px;
+    width: 100%;
+}
+
+.icon-action{
+    position:absolute;
+    bottom: 0;
+    height: 5%;
+    width: 100%;
+    background-color: var(--carbon);
+}
+
+/* #endregion */
+
+/* #region [3] UTILITIES */
 
 .top{
     top: 0;
@@ -50,6 +81,22 @@ body{
 
 .bottom{
     bottom: 0;
+}
+
+.fnt-wht{
+    color:var(--wht);
+}
+
+.fnt-s-1r{
+    font-size: 1rem;
+}
+
+.fnt-s-15r{
+    font-size: 1.5rem;
+}
+
+.fnt-s-2r{
+    font-size: 2rem;
 }
 
 .wt-l{
@@ -67,17 +114,14 @@ body{
     width: 100%;
 }
 
-/* ---------------- UTILITIES ------------------ */
-.logo{
-    width:60%;
-    height: 100%;
+.fl-l{
+    float: left;
+    margin: 150px 0 0 150px; 
 }
 
-.sec-50{
-    float: left;
-    width: 50%;
-    max-height: 100%;
-    margin: 10%;
+.fl-r{
+ float: right; 
+ margin: 150px 150px 0 50px;  
 }
 
 .btn{
@@ -121,7 +165,6 @@ body{
 }
 
 .m-auto{
-    display: block;
     margin: auto;
 }
 
@@ -130,8 +173,15 @@ body{
     padding:0;
 }
 
- /* --------------- ANIMACIONES -------------- */
+.clear-fix::after{
+    content:"";
+    display: block;
+    float: both;
+}
 
+/* #endregion */
+
+/* #region [4] ANIMATIONS */
 .breath{
     animation: bt .95s ease-in 1.25s alternate infinite;
 }
@@ -145,19 +195,33 @@ body{
     }
 }
 
-/* ---------------- RETICULA ------------------ */
+.async{
+    animation-delay: 0.65ms;
+}
+/* #endregion */
 
+/* #region [5] QUERYES */
+@media screen and (max-width: 650px){
+
+
+}
+/* #endregion */
+
+/* #region [6] LAYOUT-HELPERS */
 .ret{
     border: 1px solid darkmagenta;
-}
-
-.ret > div{
-    border: 1px solid #adff2f;
+    background-color: rgba(0, 255, 127, 10%);
 }
 
 .ret *{
     border: 1px solid blue;
 }
+
+.ret div{
+    border: 1px solid #adff2f;
+    background-color: rgba(255, 0, 0, 25%);
+}
+
 
 .cw{
     border: 1px solid white;
@@ -174,3 +238,4 @@ body{
 .bc2{
     background-color: var(--gry);
 }
+/* #endregion */

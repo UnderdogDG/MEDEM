@@ -12,7 +12,11 @@ let maxElemt = scrollers.length;
 
 /* #region [2] STORE */
 const store = (reducer)=>{
-    const state = {};
+    let state = {
+        n1: false,
+        n2: false,
+        n3: false,
+    };
     const listeners = [];
 
     const getstate = ()=> state;
@@ -26,15 +30,18 @@ const store = (reducer)=>{
         listeners.forEach(listener => listener(state));
     };
 
-    return{ getstate, dispatch, subscibe }
+    return{ getstate, dispatch, subscribe }
 };
 /* #endregion */
 
 /* #region [3] REDUCER */
-const reducer = (state, action)=>{
+const reducer = (state={}, action)=>{
     switch (action.type) {
         case NEXT:
-            return Object.assign({}, ...state, );
+            return Object.assign(
+                {}, 
+                state, 
+                {[action.payload.target]: true, [action.payload.origin]: false});
             break;
 
         case PREV:
@@ -49,22 +56,30 @@ const reducer = (state, action)=>{
 
 /* #region [4] ACTIONS */
 const actions = {
-    next(payload){
+    next(origin, target){
         return {
             type: NEXT,
-            
+            payload: {
+                origin: origin,
+                target: target,
+            }
         }
     },
 
     prev(){
         return{
             type: PREV,
-
+            payload: {
+                origin: origin,
+                target: target,
+            }
         }
     }
 }
 /* #endregion */
 
+const createStore= store(reducer);
+createStore.subscribe((x)=>console.log(x));
 /* #region [5] fx WHEEL */
 document.addEventListener("wheel", (x)=>{
     intElmt+=1;
@@ -88,7 +103,9 @@ document.addEventListener("wheel", (x)=>{
             console.log(x.target.nextElementSibling.id); // REVISAR!!!
             scrollers[elemt].classList.add('slide');
             elemt += 1;
+            createStore.dispatch(actions.next(x.target.id, x.target.nextElementSibling.id));
         };
+
     }
     
 
@@ -96,7 +113,9 @@ document.addEventListener("wheel", (x)=>{
 /* #endregion */
 
 /* #region [6] fx KEY */
-
+document.addEventListener('keyup', (x)=>{
+    console.log(x.target);//DAMN!!!
+});
 /* #endregion */
 
 /* #region [7] fx CLICK */
