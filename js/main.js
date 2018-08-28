@@ -1,17 +1,73 @@
 /* #region [1] VARS */
 const wH = window.innerHeight;
 const scrollers = document.getElementsByClassName('scroll');
+const NEXT = 'NEXT';
+const PREV = 'PREV'
 let elemt = 0;
 let intElmt = 0;
 let maxElemt = scrollers.length;
 /* #endregion */
 
-var listener = document.getElementById('listener');
+// var listener = document.getElementById('listener');
 
-listener.addEventListener("wheel", (x)=>{
+/* #region [2] STORE */
+const store = (reducer)=>{
+    const state = {};
+    const listeners = [];
+
+    const getstate = ()=> state;
+
+    const subscribe = (listener)=>{
+        listeners.push(listener);
+    };
+
+    const dispatch = (action)=>{
+        state = reducer(state, action);
+        listeners.forEach(listener => listener(state));
+    };
+
+    return{ getstate, dispatch, subscibe }
+};
+/* #endregion */
+
+/* #region [3] REDUCER */
+const reducer = (state, action)=>{
+    switch (action.type) {
+        case NEXT:
+            return Object.assign({}, ...state, );
+            break;
+
+        case PREV:
+            return Object.assign({}, ...state, );
+
+        default:
+            return state;
+    }
+
+};
+/* #endregion */
+
+/* #region [4] ACTIONS */
+const actions = {
+    next(payload){
+        return {
+            type: NEXT,
+            
+        }
+    },
+
+    prev(){
+        return{
+            type: PREV,
+
+        }
+    }
+}
+/* #endregion */
+
+/* #region [5] fx WHEEL */
+document.addEventListener("wheel", (x)=>{
     intElmt+=1;
-
-    /* #region [2] fx */
     if(intElmt>=3){
         intElmt=0;
 
@@ -28,14 +84,24 @@ listener.addEventListener("wheel", (x)=>{
             },600)
             
         }else{
+            console.log(x.target.id);
+            console.log(x.target.nextElementSibling.id); // REVISAR!!!
             scrollers[elemt].classList.add('slide');
             elemt += 1;
         };
     }
-    /* #endregion */
+    
 
 });
+/* #endregion */
 
+/* #region [6] fx KEY */
+
+/* #endregion */
+
+/* #region [7] fx CLICK */
+
+/* #endregion */
 // document.addEventListener('wheel', (x)=>{
 //     let df = document.getElementById("sec");
 //     console.log("ev.pY: ", x.pageY);
