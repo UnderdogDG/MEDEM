@@ -7,15 +7,13 @@ let elemt = 0;
 let intElmt = 0;
 let maxElemt = scrollers.length;
 /* #endregion */
-
+console.log(maxElemt);
 var listener = document.getElementById('listener');
 
 /* #region [2] STORE */
 const store = (reducer)=>{
     let state = {
-        n1: false,
-        n2: false,
-        n3: false,
+        slide: 0
     };
     const listeners = [];
 
@@ -35,17 +33,26 @@ const store = (reducer)=>{
 /* #endregion */
 
 /* #region [3] REDUCER */
-const reducer = (state={}, action)=>{
+const reducer = (state={slide:0}, action)=>{
+    let cont = state.slide + action.payload;
     switch (action.type) {
         case NEXT:
-            return Object.assign(
-                {}, 
-                state, 
-                {[action.payload.target]: true, [action.payload.origin]: false});
+            if (cont>=maxElemt){
+                return Object.assign({}, state, {slide: 0});
+            }else{
+                return Object.assign({}, state, {slide: cont});
+            }
+             
             break;
 
         case PREV:
-            return Object.assign({}, ...state, );
+            if (cont<0){
+                return Object.assign({}, state, {slide: maxElemt});
+            }else{
+                return Object.assign({}, state, {slide: cont});
+            }
+            
+            break;
 
         default:
             return state;
@@ -56,30 +63,26 @@ const reducer = (state={}, action)=>{
 
 /* #region [4] ACTIONS */
 const actions = {
-    next(origin, target){
+    next(){
         return {
             type: NEXT,
-            payload: {
-                origin: origin,
-                target: target,
-            }
+            payload: 1
         }
     },
 
     prev(){
         return{
             type: PREV,
-            payload: {
-                origin: origin,
-                target: target,
-            }
+            payload: -1
         }
     }
 }
 /* #endregion */
 
 const createStore= store(reducer);
-createStore.subscribe((x)=>console.log(x));
+createStore.subscribe((x)=>{
+    console.log(x);
+});
 /* #region [5] fx WHEEL */
 document.addEventListener("wheel", (x)=>{
     intElmt+=1;
@@ -114,7 +117,17 @@ document.addEventListener("wheel", (x)=>{
 
 /* #region [6] fx KEY */
 document.addEventListener('keyup', (x)=>{
-    console.log(x.target);//DAMN!!!
+    console.log(x);
+    switch (x.key){
+        case "ArrowUp":
+            createStore.dispatch(actions.next());
+        break;
+
+        case "ArrowDown":
+            createStore.dispatch(actions.prev());
+        break;
+    }
+    
 });
 /* #endregion */
 
