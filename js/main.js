@@ -8,7 +8,7 @@ let intElmt = 0;
 let maxElemt = scrollers.length;
 /* #endregion */
 
-// var listener = document.getElementById('listener');
+var listener = document.getElementById('listener');
 
 /* #region [2] STORE */
 const store = (reducer)=>{
