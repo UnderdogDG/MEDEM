@@ -1,4 +1,6 @@
 /* #region [1] VARS */
+console.log("hi");
+
 const wH = window.innerHeight;
 const scrollers = document.getElementsByClassName('scroll');
 const NEXT = 'NEXT';
@@ -7,8 +9,6 @@ let elemt = 0;
 let intElmt = 0;
 let maxElemt = scrollers.length;
 /* #endregion */
-console.log(maxElemt);
-var listener = document.getElementById('listener');
 
 /* #region [2] STORE */
 const store = (reducer)=>{
@@ -84,9 +84,15 @@ createStore.subscribe((x)=>{
     switch (x.dir) {
         case 1:
             if (x.slide>maxElemt){
+                scrollers[0].classList.remove('bottom');
+                scrollers[0].classList.add('top');
                 for(let i = 0; i<maxElemt;i++){
                     scrollers[i].classList.remove('slide');
                 }
+                setTimeout(()=>{
+                    scrollers[0].classList.remove('top');
+                    scrollers[0].classList.add('bottom');
+                }, 700);
             }
             else{
                 scrollers[x.slide-1].classList.add('slide');
@@ -95,9 +101,15 @@ createStore.subscribe((x)=>{
         
         case -1:
             if(x.slide == maxElemt){
+                scrollers[0].classList.remove('bottom');
+                scrollers[0].classList.add('top');
                 for(let i = 0; i<maxElemt;i++){
                     scrollers[i].classList.add('slide');
                 }
+                setTimeout(()=>{
+                    scrollers[0].classList.remove('top');
+                    scrollers[0].classList.add('bottom');
+                }, 700);
             }
             else{
                 scrollers[x.slide].classList.remove('slide');
@@ -109,6 +121,7 @@ createStore.subscribe((x)=>{
 });
 /* #region [5] fx WHEEL -- INCOMPLETE!!!! --*/
 document.addEventListener("wheel", (x)=>{
+    console.log("wheel");
     intElmt+=1;
     if(intElmt>=3){
         intElmt=0;
@@ -119,13 +132,14 @@ document.addEventListener("wheel", (x)=>{
 
 /* #region [6] fx KEY */
 document.addEventListener('keyup', (x)=>{
+    console.log("key");
     switch (x.key){
         case "ArrowUp":
-            createStore.dispatch(actions.next());
+            createStore.dispatch(actions.prev());
         break;
 
         case "ArrowDown":
-            createStore.dispatch(actions.prev());
+            createStore.dispatch(actions.next());
         break;
     }  
 });
@@ -133,6 +147,7 @@ document.addEventListener('keyup', (x)=>{
 
 /* #region [7] fx CLICK */
 document.addEventListener("click", (x)=>{
+    console.log("click");
     createStore.dispatch(actions.next());
 });
 /* #endregion */
