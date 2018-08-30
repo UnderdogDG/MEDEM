@@ -141,6 +141,27 @@ body{
     border: 2px solid var(--carbon);
     margin: auto;
 }
+.sec-sociales{
+    box-sizing: border-box;
+    width: 80%;
+    height: 30%;
+    padding: 30px;
+}
+
+.icon{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+.sec-sociales a{
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    width: 25%;
+    height: 100%;
+    text-decoration: none;
+}
 
 .fl-l{
     float: left;

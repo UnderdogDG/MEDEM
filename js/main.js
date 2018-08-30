@@ -18,18 +18,14 @@ const store = (reducer)=>{
         slide: 0
     };
     const listeners = [];
-
     const getstate = ()=> state;
-
     const subscribe = (listener)=>{
         listeners.push(listener);
     };
-
     const dispatch = (action)=>{
         state = reducer(state, action);
         listeners.forEach(listener => listener(state));
     };
-
     return{ getstate, dispatch, subscribe }
 };
 /* #endregion */
@@ -44,9 +40,7 @@ const reducer = (state={slide:0}, action)=>{
             }else{
                 return Object.assign({}, state, {slide: cont, dir: action.payload});
             }
-             
             break;
-
         case PREV:
             if (cont<0){
                 return Object.assign({}, state, {slide: maxElemt, dir: action.payload});
@@ -55,7 +49,6 @@ const reducer = (state={slide:0}, action)=>{
             }
             
             break;
-
         default:
             return state;
     }
@@ -71,7 +64,6 @@ const actions = {
             payload: 1
         }
     },
-
     prev(){
         return{
             type: PREV,
@@ -81,6 +73,7 @@ const actions = {
 }
 /* #endregion */
 
+/* #region [5] SUBSCRIPTIONS */
 const createStore= store(reducer);
 createStore.subscribe((x)=>{
     switch (x.dir) {
@@ -100,7 +93,6 @@ createStore.subscribe((x)=>{
                 scrollers[x.slide-1].classList.add('slide');
             }
             break;
-        
         case -1:
             if(x.slide == maxElemt){
                 scrollers[0].classList.remove('bottom');
@@ -116,14 +108,14 @@ createStore.subscribe((x)=>{
             else{
                 scrollers[x.slide].classList.remove('slide');
             }
-    
         default:
             break;
     }   
 });
-/* #region [5] fx WHEEL -- INCOMPLETE!!!! --*/
+/* #endregion */
+
+/* #region [6] fx WHEEL -- INCOMPLETO!!!! --*/
 document.addEventListener("wheel", (x)=>{
-    console.log("wheel");
     intElmt+=1;
     if(intElmt>=3){
         intElmt=0;
@@ -132,14 +124,12 @@ document.addEventListener("wheel", (x)=>{
 });
 /* #endregion */
 
-/* #region [6] fx KEY */
+/* #region [7] fx KEY */
 document.addEventListener('keyup', (x)=>{
-    console.log("key");
     switch (x.key){
         case "ArrowUp":
             createStore.dispatch(actions.prev());
         break;
-
         case "ArrowDown":
             createStore.dispatch(actions.next());
         break;
@@ -147,13 +137,13 @@ document.addEventListener('keyup', (x)=>{
 });
 /* #endregion */
 
-/* #region [7] fx CLICK */
+/* #region [8] fx CLICK */
 document.addEventListener("click", (x)=>{
-    console.log("click");
     createStore.dispatch(actions.next());
 });
 /* #endregion */
 
+/* #region [9] fx TEXT */
 txt.addEventListener('animationiteration', ()=>{
     if(elemt>fra.length-1){
         txt.innerHTML=fra[0];
@@ -162,9 +152,9 @@ txt.addEventListener('animationiteration', ()=>{
     else{
         txt.innerHTML=fra[elemt];
         elemt++;
-
     }
 });
+/* #endregion */
 
 // document.addEventListener('wheel', (x)=>{
 //     let df = document.getElementById("sec");
