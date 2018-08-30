@@ -3,9 +3,11 @@ console.log("hi");
 
 const wH = window.innerHeight;
 const scrollers = document.getElementsByClassName('scroll');
+const txt = document.getElementById("txt");
+const fra = [ 'Bienvenido', 'Bienvenido', 'Explora', 'Explora', 'Conoce', 'Conoce'];
 const NEXT = 'NEXT';
-const PREV = 'PREV'
-let elemt = 0;
+const PREV = 'PREV';
+let elemt = 1;
 let intElmt = 0;
 let maxElemt = scrollers.length;
 /* #endregion */
@@ -151,6 +153,19 @@ document.addEventListener("click", (x)=>{
     createStore.dispatch(actions.next());
 });
 /* #endregion */
+
+txt.addEventListener('animationiteration', ()=>{
+    if(elemt>fra.length-1){
+        txt.innerHTML=fra[0];
+        elemt = 1;
+    }
+    else{
+        txt.innerHTML=fra[elemt];
+        elemt++;
+
+    }
+});
+
 // document.addEventListener('wheel', (x)=>{
 //     let df = document.getElementById("sec");
 //     console.log("ev.pY: ", x.pageY);
