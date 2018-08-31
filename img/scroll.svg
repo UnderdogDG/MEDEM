@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Capa_1" 
-	xmlns="http://www.w3.org/2000/svg" 
-	xmlns:xlink="http://www.w3.org/1999/xlink" 
-	x="0px" y="0px"
-	viewBox="0 0 150 250" 
-	enable-background="new 0 0 150 250" 
-	xml:space="preserve">
-<path fill="none" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" d="M127.768,201.558
-	c0,20.069-16.294,36.34-36.392,36.34H58.624c-20.099,0-36.392-16.271-36.392-36.34V48.443c0-20.07,16.293-36.34,36.392-36.34h32.752
-	c20.098,0,36.392,16.271,36.392,36.34V201.558z"/>
+<svg version="1.1" id="w" 
+		xmlns="http://www.w3.org/2000/svg" 
+		xmlns:xlink="http://www.w3.org/1999/xlink" 
+		x="0px" y="0px" 
+	 	viewBox="0 0 234 234" 
+		enable-background="new 0 0 234 234" 
+		xml:space="preserve">
 <g>
-	<polyline fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round" stroke-miterlimit="10" points="110.165,52.449 
-		75,87.614 39.834,52.449 	"/>
-	<polyline fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round" stroke-miterlimit="10" points="110.165,92.472 
-		75,127.638 39.834,92.472 	"/>
-	<polyline fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round" stroke-miterlimit="10" points="110.165,132.495 
-		75,167.661 39.834,132.495 	"/>
-	<polyline fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round" stroke-miterlimit="10" points="110.165,172.52 
-		75,207.686 39.834,172.52 	"/>
+	<path fill="#FF5A3C" d="M124.93,174.5c-4.378,3.826-11.479,3.826-15.858,0L6,102.305v42.918c0,3.143,1.626,5.95,4.177,7.828
+		L114.02,225.92c1.646,1.439,4.314,1.439,5.961,0l103.832-72.862c2.559-1.878,4.187-4.688,4.187-7.835v-42.919L124.93,174.5z"/>
+	<path fill="#FF5A3C" d="M216.288,7H17.712C11.244,7,6,11.58,6,17.231v70.254c0,3.143,1.626,5.951,4.177,7.829l103.843,72.87
+		c1.646,1.439,4.314,1.439,5.961,0l103.832-72.863c2.559-1.877,4.187-4.689,4.187-7.835V17.231C228,11.58,222.756,7,216.288,7z"/>
+	<text transform="matrix(1 0 0 1 43.7598 81.0508)" fill="#FFFFFF" font-weight="400" font-family="'Titillium Web'" font-size="63.5769">Scroll</text>
 </g>
 </svg>

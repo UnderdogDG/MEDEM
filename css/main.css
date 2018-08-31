@@ -38,7 +38,8 @@ body{
 }
 
 .scroll h2{
-    font-size: 2rem;
+    font-size: 3rem;
+    font-weight: 300;
     margin: 10px 0;
 }
 
@@ -47,10 +48,18 @@ body{
     margin: 30px;
 }
 
-.sec-60-1{
+.sec-60-p30{
     box-sizing: border-box;
     width: 60%;
     height: 50%;
+    padding: 50px;
+    padding-left: 30px;
+}
+
+.sec-60-1{
+    box-sizing: border-box;
+    width: 60%;
+    height: 45%;
 }
 
 .sec-60-2{
@@ -82,17 +91,21 @@ body{
     padding-top: 5%;
 }
 
+.sec-comment p{
+    font-weight: 200;
+}
+
 .sec-60-3{
     box-sizing: border-box;
     width: 60%;
-    height: 20%;
+    height: 15%;
     position: relative;
 }
 
 .sec-40{
     box-sizing: border-box;
     width: 40%;
-    height: 100%;
+    height: 90%;
     position: relative;
     padding-top: 10%;
 }
@@ -116,8 +129,19 @@ body{
 }
 
 .sec-80{
+    box-sizing: border-box;
     width: 80%;
-    height: 60%;
+    height: 80%;
+}
+
+.sec-80-2{
+    box-sizing: border-box;
+    width: 80%;
+    height: 20%;
+    font-size: 1.7rem;
+    font-weight: 200;
+    line-height: 1.1;
+    padding: 15px 0 0 0;
 }
 
 .sec-50{
@@ -126,11 +150,52 @@ body{
     height: 33%;
 }
 
-.sec-w40-h40{
+.sec-w40-h100{
     box-sizing: border-box;
     width: 40%;
-    height: 40%;
+    height: 100%;
     padding: 30px;
+    position: relative;
+}
+
+.sec-w40-h100 p{
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 90, 60, 90%);
+    color: var(--wht);
+    border-radius: 5px;
+    padding: 30px 20px;
+    margin-right: 30px;
+}
+
+.sec-cont-img{
+    box-sizing: border-box;
+    width: 40%;
+    height: 80%;
+    position: relative;
+    padding-top: 5%;
+}
+
+.sec-cont-img img{
+    max-width: 70%;
+    max-height: 90%;
+    margin-right: 10px;
+}
+
+.sec-ind{
+    width: 100%;
+    height: 10%;
+    position: fixed;
+    bottom: 0;
+    z-index: 9999;
+}
+
+.sec-ind>div{
+    width: 10%;
+    height: 100%;
+    margin: auto;
 }
 
 .acercade{
@@ -138,20 +203,22 @@ body{
     width: 100%;
     height: 100%;
     border-radius: 30px;
-    border: 2px solid var(--carbon);
     margin: auto;
 }
 
 .sec-tittle{
     box-sizing: border-box;
     width: 100%;
-    height: 20%;
+    height: 30%;
     position: relative;
 }
 
 .sec-tittle h2{
     padding: 0;
     margin: 0;
+    font-size: 4rem;
+    font-weight: 200;
+    position: relative;
 }
 
 .sec-sociales{
@@ -164,7 +231,7 @@ body{
 .icon{
     box-sizing: border-box;
     width: 25%;
-    height: 70%;
+    height: 40%;
     padding: 0 10px;
     margin: 10px 0;
     transition: transform 0.5s ease-out;   
@@ -383,9 +450,7 @@ body{
     }
 } */
 @media screen and (orientation: portrait){
-    /* .sec-40{
-        height: 90%;
-    } */
+
     .sec-40 img{
         max-width: 80%;
         max-height: 80%,
@@ -412,6 +477,29 @@ body{
     .sec-comment{
         width: 80%;
     }
+    
+    .sec-sociales{
+        height: 70%;
+    }
+
+    .sec-tittle h2{
+        display: block;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 3rem;
+
+    }
+
+    .sec-cont-img{
+        padding-top: 10%;
+    }
+
+    .sec-cont-img img{
+        max-width: 90%;
+    }
+
 }
 /* #endregion */
 
